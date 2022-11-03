@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GamesList.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello, User!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Dotnet Bot will suggest a game for you to play"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="Choose_a_random_Game"
+                Text="Select your next Game"
+                SemanticProperties.Hint="chooses a radom game for you"
+                Clicked="OnRandomGameSelect"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="Show_picked_Game"
+                Text="The Game you want to play is:"
+                HorizontalOptions="Center"/>
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
