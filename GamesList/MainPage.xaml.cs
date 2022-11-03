@@ -38,7 +38,7 @@ public partial class MainPage : ContentPage
             RequestUri = new Uri($"{standartURI}{PageSize}{apiKey}"),
             Headers =
             {
-                { "X-RapidAPI-Key", "308bccc392mshb024c99fad461f1p1d305djsn7bc6f1457146" },
+                { "X-RapidAPI-Key", "" },
                 { "X-RapidAPI-Host", "rawg-video-games-database.p.rapidapi.com" },
             },
         };
