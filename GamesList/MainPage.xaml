@@ -10,23 +10,26 @@
             VerticalOptions="Center">
 
             <Image
+                x:Name="ImageWindow"
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
             <Label
+                x:Name="TxtField1"
                 Text="Hello, User!"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Dotnet Bot will suggest a game for you to play"
+                x:Name="TxtField2"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
                 HorizontalOptions="Center" />
+
 
             <Button
                 x:Name="Choose_a_random_Game"
@@ -35,10 +38,12 @@
                 Clicked="OnRandomGameSelect"
                 HorizontalOptions="Center" />
 
-            <Label
-                x:Name="Show_picked_Game"
-                Text="The Game you want to play is:"
+            <Label 
+                x:Name="Debug"
+                Text=""
+                FontSize="18"
                 HorizontalOptions="Center"/>
+
 
 
 
