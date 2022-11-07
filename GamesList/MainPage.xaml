@@ -14,17 +14,18 @@
 
             <Image
                 x:Name="ImageWindow"
-                Source="dotnet_bot.png"
+                Source="{Binding RawgPics}"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />
 
             <Label
                 x:Name="TxtField1"
-                Text="Hello, User!"
+                Text="{Binding RawgGames}"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
+
 
             <Label
                 x:Name="TxtField2"
@@ -38,7 +39,7 @@
                 x:Name="Choose_a_random_Game"
                 Text="Select your next Game"
                 SemanticProperties.Hint="chooses a radom game for you"
-                Clicked="OnRandomGameSelect"
+                Command="{Binding RandomGameSelectCommand}"
                 HorizontalOptions="Center" />
 
             <Label 

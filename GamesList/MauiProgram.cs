@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using GamesList.ViewModels;
+using Microsoft.Extensions.Logging;
 
 
 namespace GamesList;
@@ -15,6 +16,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+		builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddSingleton<MainViewModel>();
 
 
 #if DEBUG

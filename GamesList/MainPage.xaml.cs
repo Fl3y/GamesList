@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http.Json;
 using System.Text.Json.Serialization;
+using GamesList.ViewModels;
 using Newtonsoft.Json.Linq;
 
 namespace GamesList;
@@ -16,10 +17,10 @@ public partial class MainPage : ContentPage
     public string RawgPics;
 
     public string RawgRequis;
-    public MainPage()
+    public MainPage(MainViewModel vm)
     {
         InitializeComponent();
-        BindingContext = this;
+        BindingContext = vm;
     }
 
     private async void OnRandomGameSelect(object sender, EventArgs e)
