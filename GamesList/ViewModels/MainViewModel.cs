@@ -1,13 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GamesList.ViewModels
 {
@@ -20,6 +13,7 @@ namespace GamesList.ViewModels
 
         [ObservableProperty]
         string rawgGames;
+
 
         [ObservableProperty]
         string rawgPics;
