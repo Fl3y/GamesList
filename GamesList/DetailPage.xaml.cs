@@ -2,7 +2,10 @@ namespace GamesList;
 
 public partial class DetailPage : ContentPage
 {
-	public DetailPage()
+
+
+
+	public DetailPage(string gameName, string gamePic, string gameRquis)
 	{
 		InitializeComponent();
 	}
