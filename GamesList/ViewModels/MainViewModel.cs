@@ -11,6 +11,8 @@ namespace GamesList.ViewModels
         public List<KeyValuePair<string, string>> listReturnedByApi = new List<KeyValuePair<string, string>>();
 
 
+        
+
         [ObservableProperty]
         string rawgGames;
 
@@ -21,11 +23,6 @@ namespace GamesList.ViewModels
         [ObservableProperty]
         string rawgRequis;
 
-        [RelayCommand]
-        public void Test()
-        {
-            
-        }
 
         [RelayCommand]
         private async void OnRandomGameSelect()
@@ -37,6 +34,12 @@ namespace GamesList.ViewModels
             RawgPics = ApiRawgPictureRequest(listReturnedByApi);
 
             RawgRequis = ApiRawgRequirementsRequst(listReturnedByApi);
+        }
+
+        [RelayCommand]
+        async Task LearnMore()
+        {
+            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={rawgGames}");
         }
 
 
@@ -82,7 +85,7 @@ namespace GamesList.ViewModels
             List<JToken> list = new List<JToken>();
             List<KeyValuePair<string, string>> keyValueList = new List<KeyValuePair<string, string>>();
             var standartURI = "https://rawg-video-games-database.p.rapidapi.com/games?";
-            var PageSize = "page_size=350000&";
+            var PageSize = "page_size=10000000&";
             var apiKey = "key=3af37b336430414aa6703049eb9ff1aa";
             var rand = new Random();
 
@@ -101,10 +104,20 @@ namespace GamesList.ViewModels
             using (var response = await client.SendAsync(request))
             {
                 response.EnsureSuccessStatusCode();
-                i = rand.Next(0, 20);
+
+                i = rand.Next(0, 1000);
+
                 JString = await response.Content.ReadAsStringAsync();
                 json = JObject.Parse(JString);
-                list = json.SelectToken($"results[{i}]").ToList();
+                try
+                {
+                    list = json.SelectToken($"results[{i}]").ToList();
+                }
+                catch (Exception ex)
+                {
+                    i = rand.Next(0,20);
+                    list = json.SelectToken($"results[{i}]").ToList();
+                }
             }
 
             foreach (var item in list)

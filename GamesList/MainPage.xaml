@@ -21,7 +21,7 @@
 
             <Label
                 x:Name="TxtField1"
-                Text="{Binding RawgGames}"
+                Text="Your next game will be:"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center"/>
@@ -29,9 +29,10 @@
 
             <Label
                 x:Name="TxtField2"
+                Text="{Binding RawgGames}"
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
+                FontSize="22"
                 HorizontalOptions="Center" />
 
 
@@ -42,12 +43,12 @@
                 Command="{Binding RandomGameSelectCommand}"
                 HorizontalOptions="Center" />
 
-            <Label 
-                x:Name="Debug"
-                Text=""
-                FontSize="18"
-                HorizontalOptions="Center"/>
-
+            <Button
+                x:Name="Learn_More"
+                Text="Learn more"
+                Command="{Binding LearnMoreCommand}"
+                SemanticProperties.Hint="Learn more about the game you selected"
+                HorizontalOptions="Center" />
 
 
 

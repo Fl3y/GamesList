@@ -1,3 +1,5 @@
+using GamesList.ViewModels;
+
 namespace GamesList;
 
 public partial class DetailPage : ContentPage
@@ -5,9 +7,10 @@ public partial class DetailPage : ContentPage
 
 
 
-	public DetailPage(string gameName, string gamePic, string gameRquis)
+	public DetailPage(DetailViewModel vm)
 	{
 		InitializeComponent();
+		BindingContext= vm;
 	}
 
 
