@@ -12,6 +12,14 @@
             Padding="30,0"
             VerticalOptions="Center">
 
+            <Label
+                x:Name="Debug"
+                Text="{Binding RawgRequis}"
+                SemanticProperties.Hint="EE"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                />
+
             <Image
                 x:Name="ImageWindow"
                 Source="{Binding RawgPics}"

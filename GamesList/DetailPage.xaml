@@ -11,7 +11,7 @@
             VerticalOptions="Center">
 
         <Label 
-            Text="{Binding Text}"
+            Text="{Binding Game}"
             VerticalOptions="Center" 
             SemanticProperties.Description="Cute dot net bot waving hi to you!"
             HeightRequest="200"
