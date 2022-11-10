@@ -12,14 +12,6 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Label
-                x:Name="Debug"
-                Text="{Binding RawgRequis}"
-                SemanticProperties.Hint="EE"
-                HeightRequest="200"
-                HorizontalOptions="Center"
-                />
-
             <Image
                 x:Name="ImageWindow"
                 Source="{Binding RawgPics}"
@@ -54,7 +46,7 @@
             <Button
                 x:Name="Learn_More"
                 Text="Learn more"
-                Command="{Binding LearnMoreCommand}"
+                Command="{Binding NavigateCommand}"
                 SemanticProperties.Hint="Learn more about the game you selected"
                 HorizontalOptions="Center" />
 

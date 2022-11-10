@@ -1,21 +1,25 @@
 ﻿using CommunityToolkit.Mvvm.Collections;
 using CommunityToolkit.Mvvm.ComponentModel;
-using GamesList.ViewModels;
 
 namespace GamesList.ViewModels
 {
+    [QueryProperty(nameof(Game), nameof(Game))]
+    [QueryProperty(nameof(Pic), nameof(Pic))]
+    
     public partial class DetailViewModel: ObservableObject
     {
+
         [ObservableProperty]
         string game;
 
-        DetailViewModel()
-        {
-            
-        }
+        [ObservableProperty]
+        string pic;
+
+        [ObservableProperty]
+        string requis;
+
+
 
 
     }
-
-
 }

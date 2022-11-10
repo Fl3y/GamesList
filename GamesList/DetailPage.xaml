@@ -10,11 +10,20 @@
             Padding="30,0"
             VerticalOptions="Center">
 
+        <Image
+            x:Name="ImageGamePic"
+            Source="{Binding Pic}"
+            SemanticProperties.Description="Picture of the game"
+            HeightRequest="200"
+            HorizontalOptions="Center" />
+
         <Label 
             Text="{Binding Game}"
             VerticalOptions="Center" 
             SemanticProperties.Description="Cute dot net bot waving hi to you!"
-            HeightRequest="200"
+            FontSize="32"
             HorizontalOptions="Center"/>
+
+
     </VerticalStackLayout>
 </ContentPage>
