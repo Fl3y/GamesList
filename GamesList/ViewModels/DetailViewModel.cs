@@ -3,11 +3,23 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace GamesList.ViewModels
 {
-    [QueryProperty("Text", "Text")]
+    [QueryProperty(nameof(Game), nameof(Game))]
+
+    
     public partial class DetailViewModel: ObservableObject
     {
+
         [ObservableProperty]
-        string text;
+        string game;
+
+        [ObservableProperty]
+        string pic;
+
+        [ObservableProperty]
+        string requis;
+
+
+
 
     }
 }

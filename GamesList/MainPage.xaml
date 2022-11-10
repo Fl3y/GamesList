@@ -46,7 +46,7 @@
             <Button
                 x:Name="Learn_More"
                 Text="Learn more"
-                Command="{Binding LearnMoreCommand}"
+                Command="{Binding NavigateCommand}"
                 SemanticProperties.Hint="Learn more about the game you selected"
                 HorizontalOptions="Center" />
 

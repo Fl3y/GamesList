@@ -11,6 +11,7 @@ namespace GamesList.ViewModels
         public List<KeyValuePair<string, string>> listReturnedByApi = new List<KeyValuePair<string, string>>();
 
 
+
         
 
         [ObservableProperty]
@@ -37,10 +38,8 @@ namespace GamesList.ViewModels
         }
 
         [RelayCommand]
-        async Task LearnMore()
-        {
-            await Shell.Current.GoToAsync($"{nameof(DetailPage)}?Text={rawgGames}");
-        }
+        Task Navigate() => Shell.Current.GoToAsync($"{nameof(DetailPage)}?Game={rawgGames}");
+        
 
 
 
