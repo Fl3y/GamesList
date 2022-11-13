@@ -20,10 +20,30 @@
         <Label 
             Text="{Binding Game}"
             VerticalOptions="Center" 
-            SemanticProperties.Description="Cute dot net bot waving hi to you!"
+            SemanticProperties.Description="The game picked for you"
             FontSize="32"
             HorizontalOptions="Center"/>
 
+        <Label
+            Text="{Binding Release}"
+            VerticalOptions="Center"
+            SemanticProperties.Description="The  releasedate of the game"
+            FontSize="22"
+            HorizontalOptions="Center" />
+
+        <Label 
+            Text="{Binding Critic}"
+            VerticalOptions="Center"
+            SemanticProperties.Description="Metacritic score"
+            FontSize="22"
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="{Binding WikiEntry}"
+            VerticalOptions="Center"
+            SemanticProperties.Description="Wikipedia entry"
+            FontSize="22"
+            HorizontalOptions="Center" />
 
     </VerticalStackLayout>
 </ContentPage>

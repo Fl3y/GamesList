@@ -10,9 +10,9 @@ namespace GamesList.ViewModels
         public int i;
         public List<KeyValuePair<string, string>> listReturnedByApi = new List<KeyValuePair<string, string>>();
 
+        public JObject json;
 
 
-        
 
         [ObservableProperty]
         string rawgGames;
@@ -22,7 +22,10 @@ namespace GamesList.ViewModels
         string rawgPics;
 
         [ObservableProperty]
-        string rawgRequis;
+        string rawgReleaseDate;
+
+        [ObservableProperty]
+        string rawgMetacritic;
 
 
         [RelayCommand]
@@ -34,11 +37,13 @@ namespace GamesList.ViewModels
 
             RawgPics = ApiRawgPictureRequest(listReturnedByApi);
 
-            RawgRequis = ApiRawgRequirementsRequst(listReturnedByApi);
+            RawgReleaseDate = ApiRawgReleaseDateRequest(listReturnedByApi);
+
+            RawgMetacritic = ApiRawgMetaCriticRequst(listReturnedByApi);
         }
 
         [RelayCommand]
-        Task Navigate() => Shell.Current.GoToAsync($"{nameof(DetailPage)}?Game={rawgGames}&Pic={rawgPics}");
+        Task Navigate() => Shell.Current.GoToAsync($"{nameof(DetailPage)}?Game={rawgGames}&Pic={rawgPics}&Release={rawgReleaseDate}&Critic={rawgMetacritic}");
         
 
 
@@ -46,6 +51,8 @@ namespace GamesList.ViewModels
         public string ApiRawgGamesRequest(List<KeyValuePair<string, string>> l)
         {
             List<string> games = new List<string>();
+
+            
 
             games = (l.Where(pair => pair.Key == "name").Select(pair => pair.Value).ToList());
 
@@ -66,21 +73,32 @@ namespace GamesList.ViewModels
             return pictureUrlToString;
         }
 
-        public string ApiRawgRequirementsRequst(List<KeyValuePair<string, string>> l)
+        public string ApiRawgReleaseDateRequest(List<KeyValuePair<string, string>> l)
         {
-            List<string> requs = new List<string>();
+            List<string> release = new List<string>();
 
-            requs = (l.Where(pair => pair.Key == "requirements_en").Select(pair => pair.Value).ToList());
+            release = (l.Where(pair => pair.Key == "released").Select(pair => pair.Value).ToList());
 
-            var requsString = string.Join("-", requs);
+            var releaseString = string.Join("-", release);
 
-            return requsString;
+            return releaseString;
+        }
+
+        public string ApiRawgMetaCriticRequst(List<KeyValuePair<string, string>> l)
+        {
+            List<string> critcs = new List<string>();
+
+            critcs = (l.Where(pair => pair.Key == "metacritic").Select(pair => pair.Value).ToList());
+
+            var criticsString = string.Join("-", critcs);
+
+            return criticsString;
         }
 
         public async Task<List<KeyValuePair<string, string>>> ConnectToDbAndReturnJson()
         {
             string JString;
-            JObject json;
+         
             List<JToken> list = new List<JToken>();
             List<KeyValuePair<string, string>> keyValueList = new List<KeyValuePair<string, string>>();
             var standartURI = "https://rawg-video-games-database.p.rapidapi.com/games?";
